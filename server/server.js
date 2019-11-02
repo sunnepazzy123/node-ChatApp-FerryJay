@@ -23,7 +23,7 @@ io.on("connection", (socket)=>{
 		console.log("create email from client", message);
 
 	io.emit("newMessage", generateMessage(message.from, message.text));
-	callback("This is from the server");
+	callback("");
 	
 	socket.on("createLocationMessage", (coord)=>{
 		io.emit("newLocationMessage", generateLocationMessage("Admin", coord.latitude, coord.longitude));
